@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Todo Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6 flex flex-col items-center">
+
+  <!-- Form -->
+  <form action="/create" method="POST" class="w-full max-w-md bg-white p-6 rounded-xl shadow-md">
+    <h1 class="text-2xl font-semibold mb-4 text-center">Add a Todo</h1>
+
+    <label class="block mb-2 text-sm font-medium" for="title">Title</label>
+    <input
+      id="title"
+      name="title"
+      type="text"
+      placeholder="Title of the task"
+      class="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300"
+      required
+    />
+
+    <label class="block mb-2 text-sm font-medium" for="task">Details</label>
+    <input
+      id="details"
+      name="details"
+      type="text"
+      placeholder="Task details"
+      class="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300"
+      required
+    />
+
+    <input
+      type="submit"
+      value="Add Todo"
+      class="w-full cursor-pointer px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition"
+    />
+  </form>
+
+  <!-- Todo List Section -->
+  <div class="w-full max-w-4xl bg-white p-6 mt-6 rounded-xl shadow-md">
+    <h2 class="text-xl font-semibold mb-4 text-center">All Tasks</h2>
+
+    <!-- Horizontal Cards -->
+    <div class="flex flex-wrap gap-4 justify-center">
+
+      <!-- Card 1 -->
+      <div class="w-64 border p-4 rounded-lg shadow-sm">
+        <h3 class="text-lg font-medium">Title: Buy Groceries</h3>
+        <p class="text-gray-600 line-clamp-2">
+          Task: Buy milk, eggs, bread, and fruits from the supermarket.
+        </p>
+
+        <div class="flex justify-end gap-2 mt-3">
+          <a href="/read/1" class="px-3 py-1 bg-blue-500 text-white text-sm rounded-lg hover:bg-blue-600">Read</a>
+          <a href="/edit/1" class="px-3 py-1 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700">Edit</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="w-64 border p-4 rounded-lg shadow-sm">
+        <h3 class="text-lg font-medium">Title: Study JavaScript</h3>
+        <p class="text-gray-600 line-clamp-2">
+          Task: Practice map(), filter(), reduce().
+        </p>
+
+        <div class="flex justify-end gap-2 mt-3">
+          <a href="/read/2" class="px-3 py-1 bg-blue-500 text-white text-sm rounded-lg hover:bg-blue-600">Read</a>
+          <a href="/edit/2" class="px-3 py-1 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700">Edit</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
